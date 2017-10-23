@@ -1,0 +1,33 @@
+/**
+ * Mixin: Media Queries
+ */
+
+$mqs-up-to: false !default;
+
+@mixin respond-min($width) {
+    @if $mqs-up-to {
+        @if $mqs-up-to >= $width {
+            @content;
+        }
+    }
+    @else {
+        @media screen and (min-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin respond-max($width) {
+    @if $old-ie-print != true {
+        @if $mqs-up-to {
+            @if $mqs-up-to <= $width {
+                @content;
+            }
+        }
+        @else {
+            @media screen and (max-width: $width) {
+                @content;
+            }
+        }
+    }
+}

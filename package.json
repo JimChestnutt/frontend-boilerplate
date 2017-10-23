@@ -1,0 +1,61 @@
+{
+  "name": "frontend-boilerplate",
+  "version": "1.0.0",
+  "description": "Base framework for starting new html or frontend projects.",
+  "main": "/",
+  "scripts": {
+    "sass": "node-sass -o assets/dist/css/ assets/src/scss/styles.scss && postcss assets/dist/css/styles.css -d assets/dist/css/",
+    "js": "npm run browserify",
+    "browserify": "browserify assets/src/js/main.js | uglifyjs > assets/dist/js/main.min.js",
+    "watch:sass": "fsmonitor -d assets/src/scss -q '+*.scss' npm run -s sass",
+    "watch:js": "fsmonitor -d assets/src/js -q '+*.js' npm run js",
+    "browsersync": "browser-sync start --files '*.html, assets/dist/css/*.css, assets/dist/js/*.js' --proxy frontend-boilerplate.dev",
+    "watch": "npm run -s watch:sass & npm run watch:js & npm run browsersync"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimChestnutt/frontend-boilerplate.git"
+  },
+  "author": "Jim Chestnutt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JimChestnutt/frontend-boilerplate/issues"
+  },
+  "homepage": "https://github.com/JimChestnutt/frontend-boilerplate#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.13",
+    "browserify": "^14.5.0",
+    "cssnano": "^3.10.0",
+    "eslint": "^4.9.0",
+    "fsmonitor": "^0.2.4",
+    "groot-sass": "0.0.7",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.3",
+    "normalize-scss": "^7.0.0",
+    "postcss-cli": "^4.1.1",
+    "uglify": "^0.1.5",
+    "uglify-js": "^3.1.5",
+    "uglifyify": "^4.0.4"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "env"
+          ]
+        }
+      ]
+    ]
+  },
+  "browserslist": [
+    "> 2%",
+    "last 2 versions",
+    "ie >= 9"
+  ]
+}

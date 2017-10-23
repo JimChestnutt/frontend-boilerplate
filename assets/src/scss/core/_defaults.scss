@@ -1,0 +1,65 @@
+/**
+ * Defaults
+ */
+
+html {
+    font-family: $font;
+    line-height: 1.5;
+    font-size: 100%; // 16px
+    font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+    min-height: 100%;
+
+    @include respond-min($bp1) {
+        @include fluid-type(480px, 980px, 16px, 18px); // experimental, may need to be replaced with standard percentage adjustment
+    }
+}
+
+body {
+    color: $color-text;
+    min-height: 100%;
+    position: relative;
+    font-weight: $weight-light;
+    -moz-osx-font-smoothing: grayscale;
+    //display: inline-block;
+}
+
+
+
+/* $. Main skip link
+\*----------------------------------------------------------------*/
+
+[href="#main"] {
+	position: absolute;
+	top: 0;
+	right: 100%;
+
+	&:focus {
+		right: auto;
+	}
+}
+
+
+/* $. Selections
+\*----------------------------------------------------------------*/
+
+::-moz-selection {
+    background: rgba(102, 102, 102, .5);
+    color: #FFF;
+    text-shadow: none;
+}
+
+::selection {
+    background: rgba(102, 102, 102, .5);
+    color: #FFF;
+    text-shadow: none;
+}
+
+a:link {
+    -webkit-tap-highlight-color: rgba(102, 102, 102, .5);
+}
+
+:focus {
+    outline: 0;
+}

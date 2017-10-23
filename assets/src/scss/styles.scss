@@ -1,0 +1,59 @@
+/**
+ * Title:
+ *    Main Stylesheet
+ * Description:
+ *    This is the main Scss file which will import all partials and
+ *    compile into: assets/dist/css/styles.css
+ */
+
+@charset "UTF-8";
+
+//display: $color-flib;
+.test {
+	transform: translate(-50%,-50%);
+	display: block;
+}
+
+/* $. Base Imports - Normalize, etc
+\*----------------------------------------------------------------*/
+
+@import "./node_modules/normalize-scss/sass/normalize/import-now";
+
+/* $. Base - Variables, global mixins
+\*----------------------------------------------------------------*/
+
+@import "core/mixins";
+@import "core/vars";
+@import "core/defaults";
+@import "core/typography";
+@import "core/grid";
+@import "core/tags";
+
+
+
+/* $. Components - Header, Footer, Button etc
+\*----------------------------------------------------------------*/
+
+@import "components/links";
+@import "components/buttons";
+@import "components/content";
+@import "components/forms";
+@import "components/lists";
+@import "components/tables";
+@import "components/header";
+@import "components/footer";
+@import "components/nav";
+@import "components/island";
+@import "components/media";
+@import "components/container";
+@import "components/sidebar";
+@import "components/article";
+@import "components/breadcrumb";
+@import "components/card";
+@import "components/pagination";
+@import "components/section";
+@import "components/helpers";
+@import "components/utility";
+
+
+
