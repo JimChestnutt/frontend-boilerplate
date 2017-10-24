@@ -12,7 +12,7 @@ html {
     min-height: 100%;
 
     @include respond-min($bp1) {
-        @include fluid-type(480px, 980px, 16px, 18px); // experimental, may need to be replaced with standard percentage adjustment
+        @include fluid-type(480px, 980px, 16px, 20px); // experimental, may need to be replaced with standard percentage adjustment
     }
 }
 

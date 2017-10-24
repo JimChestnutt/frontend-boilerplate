@@ -7,4 +7,4 @@ const $ = require('jquery');
 //const $ = 'hi';
 
 
-$('body').css('background-color','#ccc');
+//$('body').css('background-color','#ccc');
