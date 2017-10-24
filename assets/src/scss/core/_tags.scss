@@ -1,3 +1,57 @@
 /**
  * Tags
+ * 
+ * - Basic tag settings
  */
+
+hr {
+    border: 0;
+    border-top: 1px solid $color-grey-6;
+}
+
+blockquote {
+    clear: both;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+    padding-left: $base;
+    border-left: solid 2px $color-grey-6;
+
+    @include respond-min($bp2) {
+        padding-left: $base*2;
+        padding-right: $base*2;
+    }
+
+    p {
+        font-size: 1.25em;
+    }
+}
+
+img {
+    display: inline-block;
+    margin: 0 auto;
+    font-style: italic;
+    color: #666;
+    vertical-align: middle;
+
+    &[width] {
+        width: auto !important;
+    }
+
+    &[height] {
+        height: auto !important;
+    }
+}
+
+img,
+audio,
+canvas,
+embed,
+object,
+video {
+    max-width: 100%;
+}
+
+iframe {
+    display: block;
+}

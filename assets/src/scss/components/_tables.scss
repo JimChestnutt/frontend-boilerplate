@@ -1,3 +1,23 @@
 /**
  * Tables
  */
+
+
+table {
+    width: 100%;
+}
+
+td, th, caption {
+    padding: $base/2;
+    border: 1px solid $color-grey-6;
+    vertical-align: top;
+}
+
+tr:nth-child(odd) td {
+    background: $color-grey-7;
+}
+
+th, caption {
+    font-weight: bold;
+    background: $color-grey-6;
+}

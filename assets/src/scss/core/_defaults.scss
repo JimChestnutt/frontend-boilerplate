@@ -2,6 +2,17 @@
  * Defaults
  */
 
+// owl selector for vertical spacing.
+* + * {
+  margin-top: $base*1.5;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 html {
     font-family: $font;
     line-height: 1.5;
@@ -22,7 +33,6 @@ body {
     position: relative;
     font-weight: $weight-light;
     -moz-osx-font-smoothing: grayscale;
-    //display: inline-block;
 }
 
 
@@ -45,14 +55,14 @@ body {
 \*----------------------------------------------------------------*/
 
 ::-moz-selection {
-    background: rgba(102, 102, 102, .5);
-    color: #FFF;
+    background: $color-grey-7;
+    color: $color-text;
     text-shadow: none;
 }
 
 ::selection {
-    background: rgba(102, 102, 102, .5);
-    color: #FFF;
+    background: $color-grey-7;
+    color: $color-text;
     text-shadow: none;
 }
 
