@@ -3,34 +3,60 @@
 	<head>
 		<meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Frontend Boilerplate</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- add favicons / web manifest -->
 
 		<!-- stylesheet -->
-		<link rel="stylesheet" href="assets/dist/css/styles.css">
+		<link rel="stylesheet" href="/assets/dist/css/styles.css">
 
 		<!-- font declarations - typekit / google etc. -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 
 	</head>
 	<body class="debug">
-		<a href="#main">skip to main content</a>
+		<a href="#navigation" class="skip-link">Skip to Navigation</a>
+		<a href="#main" class="skip-link">Skip to main content</a>
 		<header class="header">
-			<div class="container container--flush">
-				header
+			<div class="container | header__container">
+				<a href="/" class="logo | header__logo">
+		            <!--<span class="is-hidden">Frontend boilerplate</span>
+		            >-->
+		            SVG logo here
+		        </a>
+
+		        <button class="nav-toggle | js-toggle-nav | header__toggle header__toggle--nav" role="button" aria-label="Toggle menu">
+		            <span class="nav-toggle__label | is-hidden">Toggle menu</span>
+		            <span class="nav-toggle__icon"></span>
+		        </button>
+
+		        <nav class="nav-container | header__nav" id="navigation" role="navigation">
+		            <ul class="nav nav--primary">
+		                <li class="nav__item nav__item--home"><a href="/" class="nav__link">Home</a></li>
+		                <li class="nav__item"><a href="#main" class="nav__link">Page 1</a></li>
+		                <li class="nav__item"><a href="#" class="nav__link">Page 2</a></li>
+		                <li class="nav__item"><a href="#" class="nav__link">Page 3</a></li>
+		                <li class="nav__item"><a href="#" class="nav__link">Page 3</a></li>
+		                <li class="nav__item"><a href="#" class="nav__link">Page 3</a></li>
+		                <li class="nav__item"><a href="#" class="nav__link">Page 3</a></li>
+		                <li class="nav__item"><a href="#" class="nav__link">Page 3</a></li>
+		            </ul>
+		        </nav>
 			</div>
 		</header>
 
 		<main id="main">
 			<div class="container">
 				<div class="content">
-					<h1>Heading 1</h1>
+					<h1>Frontend Boilerplate</h1>
+					<p></p>
 					<h2>Heading 2</h2>
 					<hr/>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum <a href="#">dolore eu fugiat</a> nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<div class="island island--bordered"><p>This is an island</p></div>
+					<a href="#" class="btn btn--primary">Hello</a>
 					<blockquote><p>Hi, this is a long involved quote</p></blockquote>
 				</div>
 				<div class="grid">
@@ -64,6 +90,9 @@
 						<td>cell 2</td>
 					</tr>
 				</table>
+				<div class="flexible flexible--16-9">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/zg2076b5Lqc" frameborder="0" allowfullscreen></iframe>
+				</div>
 			</div>
 		</main>
 
@@ -72,7 +101,7 @@
 		</footer>
 		
 		<!-- javascript -->
-		<script src="assets/dist/js/main.min.js"></script>
+		<script src="/assets/dist/js/main.min.js"></script>
 
 		<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>

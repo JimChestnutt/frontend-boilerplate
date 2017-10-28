@@ -2,11 +2,6 @@
  * Forms
  */
 
- form {
-    padding: 0;
-    margin: 0;
-}
-
 fieldset {
     margin-bottom: $base*1.5;
     padding: 0 $base;
@@ -57,10 +52,9 @@ textarea {
 }
 
 input[type=submit] {
-    //@extend .btn;
-    //@extend .btn--rounded;
-    //@extend .btn--bordered;
-    //@extend .btn--bordered-theme;
+    @extend .btn;
+    @extend .btn--bordered;
+    cursor: pointer;
 }
 
 textarea {

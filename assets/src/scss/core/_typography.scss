@@ -2,6 +2,41 @@
  * Typography
  */
 
-h1 {
-	margin-top: 0;
+ // margin adjust for 'owl' selector
+
+ h1, li, dt, dd, br, th, td {
+ 	margin-top: 0;
+ }
+
+ * + h2,
+ * + h3 {
+ 	margin-top: 1.5em;
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+ 	margin-bottom: 0;
+ }
+
+h1, .alpha {
+	font-size: $h1;
+}
+
+h2, .beta {
+    font-size: $h2;
+}
+
+h3, .gamma {
+    font-size: $h3;
+}
+
+h4, .delta {
+    font-size: $h4;
+}
+
+h5, .epsilon {
+    font-size: $h5;
+}
+
+h6, .zeta {
+    font-size: $h6;
 }

@@ -1,3 +1,99 @@
 /**
  * Island
  */
+
+/* $. Setup
+\*----------------------------------------------------------------*/
+
+/**
+ * Mixin to give colors and backgrounds for your island.
+ *
+ */
+@mixin island( $text, $bg ) {
+    color: $text;
+    background-color: $bg;
+    transition: background-color .15s ease-out;
+
+    &[href]:hover,
+    &[href]:focus {
+        color: $text;
+        background-color: darken($bg, 5%);
+    }
+}
+
+
+
+/* $. Component
+\*----------------------------------------------------------------*/
+
+.island {
+    @extend %clearfix;
+    position: relative;
+    display: block;
+    padding: $base;
+
+    @include respond-min($bp2) {
+        padding: $base*2;
+    }
+}
+
+.island__headline {
+    font-size: $base*1.2;
+    position: relative;
+    display: inline-block;
+    margin-bottom: $base/3;
+    &:after {
+        content: '';
+        position: absolute;
+        border-bottom: solid 1px $color-grey-6;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+
+/* $. Variants
+\*----------------------------------------------------------------*/
+
+
+
+
+/* $. Sizing
+\*----------------------------------------------------------------*/
+
+.island--large {
+    padding: $base*2;
+
+    @include respond-min($bp2) {
+        padding: $base*4;
+    }
+}
+
+.island--small {
+    padding: ($base/2);
+
+    @include respond-min($bp2) {
+        padding: $base;
+    }
+}
+
+.island--slim {
+    //padding: $base*.75;
+
+    @include respond-min($bp2) {
+        padding: $base*1.5;
+    }
+}
+
+
+
+/* $. Themes
+\*----------------------------------------------------------------*/
+
+.island--white   { @include island($color-text, #fff); }
+.island--grey    { @include island($color-text, $color-grey-6); }
+.island--bordered { 
+	@include island($color-text, #fff);
+	border: solid 1px $color-grey-6;
+}

@@ -1,3 +1,124 @@
 /**
  * Buttons
  */
+
+/* $. Setup
+\*----------------------------------------------------------------*/
+
+%btn {
+    display: inline-block;
+    padding: ($base*.6) $base*2 ($base*.5);
+    border: 0;
+    transition: all .15s ease-out;
+    font-family: $font;
+    //font-size: $base*1.125;
+    margin-bottom: $base;
+    text-decoration: none;
+}
+
+@mixin btn( $text, $bg, $htext: $text, $hbg: darken($bg, 20%) ) {
+    color: $text;
+    background: $bg;
+
+    &:hover,
+    &:focus {
+        color: $htext;
+        background: $hbg;
+    }
+}
+
+
+
+/* $. Component
+\*----------------------------------------------------------------*/
+
+button,
+input[type="button"],
+input[type="submit"],
+.btn {
+    @extend %btn;
+}
+
+
+
+/* $. Modifications
+\*----------------------------------------------------------------*/
+
+/**
+ * Themes
+ */
+
+ .btn--white {
+    @include btn($color-grey-2, #fff);
+
+    .section--white & {
+        box-shadow: inset 0 0 0 1px darken(#fff, 10%);
+    }
+
+    .section--dark & {
+        color: $color-grey-2;
+    }
+ }
+
+.btn--primary {
+    @include btn(#fff, $color-grey-2);
+}
+
+.btn--bordered {
+    //@include btn($brand-primary, $white);
+    border: solid 2px $color-grey-2;
+    color: $color-grey-2;
+    background: transparent;
+    position: relative;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    z-index: 1;
+    transition: all .4s;
+
+    &:hover {
+        color: #fff;
+        background: $color-grey-2;
+        transition: all .4s;
+    }
+}
+
+.btn--rounded {
+    border-radius: $base*2;
+}
+
+.btn--secondary {}
+.btn--tertiary {}
+.btn--invert {}
+
+/**
+ * Position and size
+ */
+
+.btn--blocked {
+    width: 100%;
+    text-align: left;
+}
+
+.btn--large {
+    font-size: 1.2rem;
+}
+
+.btn--small {
+    font-size: .8rem;
+}
+
+/**
+ * Icons
+ */
+
+.btn--icon {
+    position: relative;
+    padding-right: $base*2.5;
+
+    .icon          {}
+    .icon--small   {}
+    .icon--medium  {}
+    .icon--large   {}
+    .icon--xlarge  {}
+}

@@ -1,3 +1,106 @@
 /**
  * Nav
  */
+
+/* $. Variables
+\*----------------------------------------------------------------*/
+
+$color-nav: $color-link;
+
+
+
+/* $. Container
+\*----------------------------------------------------------------*/
+
+.nav-container {
+
+}
+
+
+
+/* $. Component
+\*----------------------------------------------------------------*/
+
+.nav {
+    @extend %clearfix;
+    @extend %list--unset;
+}
+
+.nav__item {
+}
+
+.nav__link {
+}
+
+
+
+/* $. Primary
+\*----------------------------------------------------------------*/
+
+.nav--primary {
+
+	.nav__link {
+		color: $color-text;
+		font-weight: $weight-normal;
+		display: inline-block;
+		position: relative;
+		padding-bottom: 1px;
+	}
+
+	.nav__item {
+		display: inline;
+		margin-right: $base*2;
+		font-size: $base*1.125;
+		line-height: 1.3;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	.nav__item--home {
+		display: none;
+	}
+
+	@include respond-max($bp2) {
+			.nav__link {
+				color: $color-text;
+				font-weight: $weight-normal;
+				display: inline-block;
+				position: relative;
+				padding-bottom: 1px;
+			}
+
+			.nav__item {
+				display: block;
+				font-size: $base*1.5;
+				margin-right: 0;
+			}
+
+			.nav__item--home {
+				display: block;
+			}
+	}
+
+	@include respond-min($bp2) {
+
+		.nav__link {
+			color: $color-text;
+		}
+
+		.nav__item {
+			display: inline;
+			margin-right: $base*2;
+			font-size: $base*1.125;
+			line-height: 1.3;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+
+		.nav__item--home {
+			display: none;
+		}
+	}
+}

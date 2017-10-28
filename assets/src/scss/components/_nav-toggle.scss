@@ -1,0 +1,91 @@
+/* $. Setup
+\*----------------------------------------------------------------*/
+
+.nav-toggle {
+	position: absolute;
+	padding: 0;
+	background-color: $color-grey-6;
+	//width: 30px;
+	//height: 30px;
+	right: 0;
+	top: 0;
+  z-index: 110;
+  width: $base*3;
+  height: $base*3;
+
+  color: $color-grey-3;
+
+  //box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+
+	@include respond-min($bp1) {
+		//right: 7.5%;
+	}
+
+}
+
+
+/* $. Base
+\*----------------------------------------------------------------*/
+
+.nav-toggle__icon {
+	 top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   margin-top: 0;
+    cursor: pointer;
+    border-radius: 1px;
+    height: 3px;
+    width: 30px;
+    background: $color-grey-2;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all .3s ease-in-out;
+
+    &:before, &:after {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 3px;
+      width: 30px;
+      background: $color-grey-2;
+      position: absolute;
+      display: block;
+      content: '';
+      transition: all .3s ease-in-out;
+    }
+    &:before {
+      top: -8px; 
+    }
+    &:after {
+      bottom: -8px;
+    }
+
+}
+
+
+.nav-toggle {
+	&.is-active {
+    background-color: $color-grey-2;
+
+		 .nav-toggle__icon {
+	      background-color: transparent;
+	      &:before, &:after {
+	        top: 0;
+	      }
+	      &:before {
+          background: #fff;
+	        transform: rotate(45deg);
+	      }
+	      &:after {
+          background: #fff;
+	        transform: rotate(-45deg);
+	      }
+	    }
+	}
+}
+
+.mobile-menu--active {
+  //position: fixed;
+  //width: 100%;
+  //height: 100%;
+}

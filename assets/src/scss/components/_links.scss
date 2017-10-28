@@ -1,3 +1,16 @@
 /**
  * Links
  */
+
+/* $. Base
+\*----------------------------------------------------------------*/
+
+.link {
+    position: relative;
+    border-bottom: 1px solid $color-grey-4;
+    transition: border-color .15s ease-out;
+
+    &:hover, &:focus {
+        border-bottom-color: $color-grey-2;
+    }
+}
