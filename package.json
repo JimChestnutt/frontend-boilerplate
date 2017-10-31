@@ -6,12 +6,14 @@
   "scripts": {
     "sass": "node-sass -o assets/dist/css/ assets/src/scss/styles.scss && postcss assets/dist/css/styles.css -d assets/dist/css/",
     "js": "npm run browserify & npm run eslint",
+    "imagemin": "imagemin assets/src/img/* -o assets/dist/img",
     "browserify": "browserify assets/src/js/main.js --debug | uglifyjs > assets/dist/js/main.min.js",
     "eslint": "eslint assets/src/js/main.js || exit 0",
     "watch:sass": "fsmonitor -d assets/src/scss -q '+*.scss' npm run -s sass",
     "watch:js": "fsmonitor -d assets/src/js -q '+*.js' npm run js",
+    "watch:img": "fsmonitor -d assets/src/img -q '+*' npm run imagemin",
     "browsersync": "browser-sync start --files '*.html, assets/dist/css/*.css, assets/dist/js/*.js' --proxy frontend-boilerplate.dev",
-    "watch": "npm run -s watch:sass & npm run watch:js & npm run browsersync"
+    "watch": "npm run -s watch:sass & npm run watch:js & npm run browsersync & npm run watch:img"
   },
   "repository": {
     "type": "git",
@@ -35,6 +37,7 @@
     "exorcist": "^1.0.0",
     "fsmonitor": "^0.2.4",
     "groot-sass": "0.0.7",
+    "imagemin-cli": "^3.0.0",
     "jquery": "^3.2.1",
     "node-sass": "^4.5.3",
     "normalize-scss": "^7.0.0",

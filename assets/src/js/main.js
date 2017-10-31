@@ -2,9 +2,23 @@
 /*global require:true*/
 /*eslint no-undef: "error"*/
 
+/*
+* JS external modules/libraries
+*/
+
+// import modernizr build
 require('./vendor/modernizr.js');
 
+// slick carousel
+require('slick-carousel');
+
+// require and prepare jquery
 const $ = require('jquery');
+
+
+/*
+* Menu handling
+*/
 
 // main menu toggle
 $('.js-toggle-nav.header__toggle').click(function() {
@@ -22,7 +36,6 @@ function closeHeaderMenu() {
 
 document.addEventListener('keyup', (event) => {
 	const keyName = event.key;
-
 	if (keyName === 'Escape') {
 		if($('body').hasClass('mobile-menu--active')) {
 			closeHeaderMenu();
@@ -40,8 +53,3 @@ function handleMenuClick(event) {
 
 document.addEventListener('click', (event) => { handleMenuClick(event); });
 document.addEventListener('touchend', (event) => { handleMenuClick(event); });
-
-//const $ = 'hi';
-
-
-//$('body').css('background-color','#ccc');
